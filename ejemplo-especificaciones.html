@@ -3,7 +3,9 @@
   <head>
     <meta charset="utf-8">
     <title>Ejemplo mapas</title>
+    <!-- Pollyfill para navegadores que no soportan webcomponents (desde IE10+, no soportado por Firefox / Waterfox) -->
     <script src="bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+    <!-- HTML import -->
     <link rel="import" href="bower_components/google-map/google-map.html">
     <link rel="import" href="bower_components/paper-slider/paper-slider.html">
   </head>
@@ -17,6 +19,7 @@
   
   Todos los custom elements que se creen deben de llevar un guion(-) en el nombre, se usa para diferenciar que se está usando un web component
   -->
+  <!-- custom elemnt -->
   <dw-holamundo></dw-holamundo>
 
   <script>
@@ -32,6 +35,29 @@
   });
   </script>
 
+  <!-- template -->
+  <h1>Template simple</h1>
+
+  <template id="mitemplate">
+    <p>Esto es un template!!</p>
+  </template>
+  <div id="template"></div>
+  <script>
+    var template = document.getElementById('template').content;
+    var clone = template.cloneNode(true);
+    document.body.appendChild(clone);
+  </script>
+
+  <!-- shadow DOM -->
+  <div id="elem"></div>
+
+  <script>
+  var elem = document.querySelector("#elem");
+  var shadow = elem.createShadowRoot();
+  shadow.innerHTML = "<p>Esto va al shadow DOM</p>";
+  </script>
+
+  <!-- custom elemnt desde HTML import -->
   <style>
   google-map {
     height: 600px;

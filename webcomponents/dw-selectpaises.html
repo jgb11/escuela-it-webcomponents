@@ -1,0 +1,32 @@
+<template>
+  <option></option>
+</template>
+<script>
+  // datos de paises
+  var paises = ["España", "Francia", "Italia"];
+
+  // cargo el template
+  var template = document._currentScript.ownerDocument.querySelector('template').content;
+  var option = template.querySelector('option');
+
+  var newPais = option;
+  paises.forEach(function(pais){
+    console.log(pais);
+    newPais.value = pais;
+    newPais.textContent = pais;
+    template.appendChild(newPais);
+    newPais = newPais.cloneNode(true);
+  });
+
+  var prototipo = Object.create(HTMLSelectElement.prototype);
+
+  prototipo.createdCallback = function() {
+    this.appendChild(template.cloneNode(true));
+  };
+
+  document.registerElement('dw-selectpaises', {
+    prototype: prototipo,
+    extends: 'select'
+  });
+
+</script>
