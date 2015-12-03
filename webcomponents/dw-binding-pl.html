@@ -1,0 +1,26 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<dom-module id="dw-binding-pl">
+  <template>
+    <style>
+    :host {
+
+    }
+    h1 {
+      color: blue;
+    }
+    </style>
+    <h1>Hola {{nombre}}</h1>
+    Escribe tu nombre: <input type="text" value="{{nombre::input}}">
+  </template>
+  <script>
+    Polymer({
+      is: 'dw-binding-pl',
+      properties: {
+        nombre: {
+          value: "JL",
+          notify: true
+        }
+      }
+    });
+  </script>
+</dom-module>
