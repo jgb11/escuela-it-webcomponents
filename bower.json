@@ -1,0 +1,24 @@
+{
+  "name": "webcomponents",
+  "homepage": "https://github.com/jgb11/escuela-it-webcomponents",
+  "authors": [
+    "jgb <txoppe@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "google-map": "GoogleWebComponents/google-map#~1.1.7",
+    "paper-slider": "PolymerElements/paper-slider#~1.0.8",
+    "iron-icons": "PolymerElements/iron-icons#~1.0.5"
+  }
+}

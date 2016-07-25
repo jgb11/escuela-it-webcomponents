@@ -1,0 +1,12 @@
+<script>
+  var prototipo = Object.create(HTMLElement.prototype);
+
+  prototipo.createdCallback = function() {
+    console.log("Creado");
+    this.textContent = "Hola Mundo!";
+  };
+
+  document.registerElement('dw-holamundo', {
+    prototype: prototipo
+  });
+</script>
